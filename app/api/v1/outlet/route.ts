@@ -93,8 +93,7 @@ export async function POST(req: Request) {
       lastMessage.usage.total_tokens
     ) {
       inputTokens = lastMessage.usage.prompt_tokens;
-      outputTokens = lastMessage.usage.total_tokens - inputTokens;
-      console.log("Use usage info");
+      outputTokens = lastMessage.usage.total_tokens;
     } else {
       outputTokens = encode(lastMessage.content).length;
       const totalTokens = data.body.messages.reduce(
@@ -102,7 +101,6 @@ export async function POST(req: Request) {
         0
       );
       inputTokens = totalTokens - outputTokens;
-      console.log("No usage info found, calculate manually");
     }
 
     let totalCost: number;
