@@ -1,7 +1,7 @@
 services:
   app:
     build:
-      context: https://github.com/Oatu4396/OpenWebUI-Monitor.git
+      context: .
       dockerfile: Dockerfile
     image: oatu4396/openwebui-monitor:latest
     ports:
