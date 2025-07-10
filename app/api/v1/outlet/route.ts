@@ -71,7 +71,6 @@ export async function POST(req: Request) {
     }
 
     const data = await req.json();
-    console.log("Request data:", JSON.stringify(data, null, 2));
     const modelId = data.body.model;
     const userId = data.user.id;
     const userName = data.user.name || "Unknown User";
