@@ -1,6 +1,9 @@
 services:
   app:
-    image: docker.io/variantconst/openwebui-monitor:latest
+    build:
+      context: https://github.com/Oatu4396/OpenWebUI-Monitor.git
+      dockerfile: Dockerfile
+    image: oatu4396/openwebui-monitor:latest
     ports:
       - "7878:3000"
     env_file:
